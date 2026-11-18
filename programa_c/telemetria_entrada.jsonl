@@ -1,0 +1,5 @@
+{"bus_id": "BUS-9042", "timestamp": "2026-11-18T14:30:00Z", "accessibility_sensors": {"hydraulic_ramp_status": "OK", "wheelchair_bay_occupied": false}, "battery_voltage": 24.8}
+{"bus_id": "BUS-7110", "timestamp": "2026-11-18T14:30:05Z", "accessibility_sensors": {"hydraulic_ramp_status": "WARN", "wheelchair_bay_occupied": true}, "battery_voltage": 23.9}
+{"bus_id": "BUS-9042", "timestamp": "2026-11-18T14:30:10Z", "accessibility_sensors": {"hydraulic_ramp_status": "FAIL", "wheelchair_bay_occupied": false}, "battery_voltage": 24.6}
+{"bus_id": "BUS-9042", "timestamp": "2026-11-18T14:30:15Z", "accessibility_sensors": {"hydraulic_ramp_status": "FAIL", "wheelchair_bay_occupied": false}, "battery_voltage": 24.6}
+{"bus_id": "BUS-0001", "timestamp": "2026-11-18T14:30:20Z", "accessibility_sensors": {"hydraulic_ramp_status": "OK"}, "battery_voltage": 24.1}

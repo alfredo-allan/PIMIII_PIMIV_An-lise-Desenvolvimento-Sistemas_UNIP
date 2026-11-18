@@ -1,0 +1,24 @@
+{
+  "_id": {
+    "$oid": "673b5a1f8c9b1a2b3c4d5e6f"
+  },
+  "bus_id": "BUS-9042",
+  "timestamp": {
+    "$date": "2026-11-18T14:30:00Z"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -46.633308,
+      -23.55052
+    ]
+  },
+  "accessibility_sensors": {
+    "hydraulic_ramp_status": "OK",
+    "tactile_floor_sensor": "OK",
+    "wheelchair_bay_occupied": false
+  },
+  "passenger_load_pct": 62,
+  "battery_voltage": 24.8,
+  "firmware_version": "v2.1.4"
+}

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UrbanoAcessível S.A. — vitrine integrada dos projetos PIM III (redes, nuvem e IoT) e PIM IV (engenharia de software, banco de dados e linguagem C).">
+  <meta name="theme-color" content="#0b0f19">
+  <title>UrbanoAcessível S.A. — PIM III &amp; PIM IV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ Barra de acessibilidade ============ -->
+  <div class="a11y-bar" role="toolbar" aria-label="Ferramentas de acessibilidade">
+    <button type="button" class="a11y-toggle" aria-expanded="false" aria-label="Mostrar ferramentas de acessibilidade"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M5 8.5l7 1.5 7-1.5M12 10v5l-3 6m3-6l3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" data-a11y="font-down" aria-label="Diminuir tamanho do texto">A−</button>
+    <button type="button" data-a11y="font-up" aria-label="Aumentar tamanho do texto">A+</button>
+    <button type="button" data-a11y="contrast" aria-pressed="false" aria-label="Alternar alto contraste"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+    <button type="button" data-a11y="motion" aria-pressed="false" aria-label="Reduzir animações"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor"/></svg></button>
+  </div>
+
+  <!-- ============ Navegação ============ -->
+  <header class="site-header" id="topo">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="#hero" class="brand" aria-label="UrbanoAcessível S.A. — início">
+        <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true">
+          <defs><linearGradient id="lg-brand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+          <rect x="2" y="2" width="36" height="36" rx="10" fill="none" stroke="url(#lg-brand)" stroke-width="3"/>
+          <circle cx="20" cy="12" r="3.2" fill="#34d399"/>
+          <path d="M18 17v8h8l3 6" fill="none" stroke="#e2e8f0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 21a7 7 0 1 0 9 9" fill="none" stroke="#38bdf8" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span>Urbano<b>Acessível</b></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#jornada">Jornada</a></li>
+        <li><a href="#infra">Infraestrutura</a></li>
+        <li><a href="#engenharia">Engenharia</a></li>
+        <li><a href="#banco">Banco de Dados</a></li>
+        <li><a href="#terminal">Terminal C</a></li>
+        <li><a href="#acessibilidade">Acessibilidade</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-layers" aria-hidden="true">
+        <div class="layer layer-grid" data-speed="0.15"></div>
+        <div class="layer layer-glow" data-speed="0.3">
+          <span class="glow g1"></span><span class="glow g2"></span><span class="glow g3"></span>
+        </div>
+        <svg class="layer layer-nodes" data-speed="0.45" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+          <g class="net-lines" stroke="#38bdf8" stroke-opacity=".22" stroke-width="1.2">
+            <line x1="120" y1="160" x2="360" y2="90"/><line x1="360" y1="90" x2="610" y2="210"/>
+            <line x1="610" y1="210" x2="880" y2="120"/><line x1="880" y1="120" x2="1150" y2="230"/>
+            <line x1="1150" y1="230" x2="1340" y2="120"/><line x1="360" y1="90" x2="300" y2="330"/>
+            <line x1="880" y1="120" x2="980" y2="360"/><line x1="1150" y1="230" x2="1240" y2="420"/>
+            <line x1="120" y1="160" x2="300" y2="330"/>
+          </g>
+          <g class="net-nodes">
+            <circle cx="120" cy="160" r="5" fill="#38bdf8"/><circle cx="360" cy="90" r="7" fill="#a855f7"/>
+            <circle cx="610" cy="210" r="5" fill="#34d399"/><circle cx="880" cy="120" r="8" fill="#38bdf8"/>
+            <circle cx="1150" cy="230" r="6" fill="#a855f7"/><circle cx="1340" cy="120" r="4" fill="#34d399"/>
+            <circle cx="300" cy="330" r="4" fill="#38bdf8"/><circle cx="980" cy="360" r="4" fill="#34d399"/>
+            <circle cx="1240" cy="420" r="5" fill="#38bdf8"/>
+          </g>
+        </svg>
+        <svg class="layer layer-city" data-speed="0.6" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice">
+          <g fill="#111827" stroke="#1e293b">
+            <rect x="0" y="170" width="90" height="190"/><rect x="100" y="110" width="70" height="250"/>
+            <rect x="180" y="200" width="110" height="160"/><rect x="300" y="60" width="80" height="300"/>
+            <rect x="390" y="150" width="120" height="210"/><rect x="520" y="100" width="70" height="260"/>
+            <rect x="600" y="190" width="130" height="170"/><rect x="740" y="40" width="90" height="320"/>
+            <rect x="840" y="160" width="110" height="200"/><rect x="960" y="90" width="80" height="270"/>
+            <rect x="1050" y="180" width="120" height="180"/><rect x="1180" y="120" width="70" height="240"/>
+            <rect x="1260" y="200" width="90" height="160"/><rect x="1360" y="140" width="80" height="220"/>
+          </g>
+          <g fill="#38bdf8" opacity=".35" class="city-windows">
+            <rect x="315" y="80" width="8" height="8"/><rect x="335" y="80" width="8" height="8"/><rect x="315" y="110" width="8" height="8"/>
+            <rect x="755" y="60" width="8" height="8"/><rect x="775" y="90" width="8" height="8"/><rect x="795" y="60" width="8" height="8"/>
+            <rect x="975" y="110" width="8" height="8"/><rect x="995" y="140" width="8" height="8"/><rect x="115" y="130" width="8" height="8"/>
+            <rect x="1195" y="140" width="8" height="8"/><rect x="535" y="120" width="8" height="8"/><rect x="555" y="150" width="8" height="8"/>
+          </g>
+        </svg>
+        <div class="layer layer-road" data-speed="0.8">
+          <svg class="bus" viewBox="0 0 420 170" width="420" height="170">
+            <g class="bus-signal" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round">
+              <path d="M300 30a22 22 0 0 1 30 0"/><path d="M290 18a38 38 0 0 1 50 0"/><path d="M280 6a54 54 0 0 1 70 0"/>
+            </g>
+            <rect x="20" y="40" width="370" height="100" rx="18" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+            <rect x="20" y="118" width="370" height="6" fill="#a855f7"/>
+            <g fill="#1e3a5f" stroke="#38bdf8" stroke-opacity=".5">
+              <rect x="40" y="56" width="52" height="38" rx="5"/><rect x="100" y="56" width="52" height="38" rx="5"/>
+              <rect x="220" y="56" width="52" height="38" rx="5"/><rect x="280" y="56" width="52" height="38" rx="5"/>
+              <rect x="342" y="56" width="36" height="50" rx="5"/>
+            </g>
+            <rect x="164" y="54" width="46" height="80" rx="4" fill="#0b1220" stroke="#34d399" stroke-width="2"/>
+            <g transform="translate(176 76)" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="9" cy="0" r="3" fill="#34d399" stroke="none"/><path d="M8 6v12h10l4 8"/><path d="M5 12a9 9 0 1 0 10 14"/>
+            </g>
+            <path class="bus-ramp" d="M164 140 L120 152 L164 152 Z" fill="#34d399" opacity=".85"/>
+            <g fill="#0b0f19" stroke="#94a3b8" stroke-width="4"><circle cx="90" cy="142" r="20"/><circle cx="320" cy="142" r="20"/></g>
+            <g fill="#94a3b8"><circle cx="90" cy="142" r="6"/><circle cx="320" cy="142" r="6"/></g>
+          </svg>
+          <div class="road"></div>
+        </div>
+      </div>
+
+      <div class="hero-content container">
+        <p class="kicker reveal">PIM III → PIM IV · Análise e Desenvolvimento de Sistemas · UNIP</p>
+        <h1 id="hero-title" class="hero-title">
+          <span class="line">UrbanoAcessível S.A.</span>
+          <span class="line grad">Transformando a Mobilidade Urbana</span>
+          <span class="line sub">com IoT, Redes e Engenharia de Software</span>
+        </h1>
+        <p class="hero-lead reveal">Sensores embarcados monitoram elevadores, rampas e assentos reservados dos ônibus. Os dados atravessam uma rede segmentada, chegam à nuvem e alimentam o sistema que abre ordens de serviço antes que um passageiro fique sem embarque.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#infra">Explorar Infraestrutura PIM III</a>
+          <a class="btn btn-secondary" href="#engenharia">Ver Engenharia de Software PIM IV</a>
+          <a class="btn btn-ghost" id="btn-pdf" href="docs/Relatorio_PIM_IV_UrbanoAcessivel.pdf" download>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Baixar Documentação PDF
+          </a>
+        </div>
+        <dl class="hero-stats reveal">
+          <div><dt>VLANs</dt><dd data-count="4">4</dd></div>
+          <div><dt>Requisitos</dt><dd data-count="13">13</dd></div>
+          <div><dt>Diagramas UML</dt><dd data-count="3">3</dd></div>
+          <div><dt>Módulos em C</dt><dd data-count="6">6</dd></div>
+        </dl>
+      </div>
+      <a class="scroll-cue" href="#jornada" aria-label="Rolar para a jornada"><span></span></a>
+    </section>
+
+    <!-- ============ 1. JORNADA ============ -->
+    <section class="section" id="jornada" aria-labelledby="jornada-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 1</span>
+          <h2 id="jornada-title">Linha do tempo da jornada</h2>
+          <p>Do cabo ao código: o PIM III construiu a infraestrutura que transporta os dados; o PIM IV construiu o sistema que decide o que fazer com eles.</p>
+        </header>
+
+        <div class="timeline">
+          <svg class="timeline-track" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 4 100">
+            <line x1="2" y1="0" x2="2" y2="100" class="track-bg"/>
+            <line x1="2" y1="0" x2="2" y2="100" class="track-fill" pathLength="1"/>
+          </svg>
+
+          <div class="phase phase-iii">
+            <span class="phase-badge">PIM III</span>
+            <h3>Infraestrutura, Nuvem e Direitos Humanos</h3>
+          </div>
+          <ol class="milestones">
+            <li class="milestone left"><span class="dot"></span><div class="card">
+              <span class="tag blue">Redes</span><h4>Topologia hierárquica Cisco</h4>
+              <p>Estrela estendida com núcleo L3 3560, acesso L2 2960 e borda 2911 rumo à WAN.</p></div></li>
+            <li class="milestone right"><span class="dot"></span><div class="card">
+              <span class="tag blue">Segmentação</span><h4>VLANs 10, 20, 30 e 40</h4>
+              <p>Operações, servidores, telemetria IoT e visitantes isolados no bloco 10.0.0.0/16 com trunk 802.1Q.</p></div></li>
+            <li class="milestone left"><span class="dot"></span><div class="card">
+              <span class="tag purple">Nuvem</span><h4>Broker MQTT e microsserviços na AWS</h4>
+              <p>Ingestão via 4G/5G, balanceador ALB, Auto Scaling e TLS 1.3 mútuo com certificados X.509.</p></div></li>
+            <li class="milestone right"><span class="dot"></span><div class="card">
+              <span class="tag green">Sociedade</span><h4>WCAG 2.1 AA, LGPD e LBI</h4>
+              <p>Leitor de tela, alto contraste, Libras e minimização de dados de geolocalização.</p></div></li>
+          </ol>
+
+          <div class="phase phase-iv">
+            <span class="phase-badge">PIM IV</span>
+            <h3>Engenharia de Software, Banco de Dados e Linguagem C</h3>
+          </div>
+          <ol class="milestones">
+            <li class="milestone left"><span class="dot"></span><div class="card">
+              <span class="tag purple">Sprint 1</span><h4>Requisitos e modelagem</h4>
+              <p>8 RFs, 5 RNFs, casos de uso, classes, atividades e o modelo relacional em 3FN.</p></div></li>
+            <li class="milestone right"><span class="dot"></span><div class="card">
+              <span class="tag blue">Sprint 2</span><h4>Programa em C com persistência</h4>
+              <p>Seis módulos, leitura segura com fgets, gravação atômica em arquivo e controle de acesso por perfil.</p></div></li>
+            <li class="milestone left"><span class="dot"></span><div class="card">
+              <span class="tag green">Sprint 3</span><h4>SQL + NoSQL e documentação ABNT</h4>
+              <p>MySQL para ordens de serviço, MongoDB para telemetria de alta frequência e o relatório final.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. INFRAESTRUTURA ============ -->
+    <section class="section alt" id="infra" aria-labelledby="infra-title">
+      <div class="parallax-deco" data-speed="-0.2" aria-hidden="true"><span></span><span></span></div>
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 2 · PIM III</span>
+          <h2 id="infra-title">Central de infraestrutura e redes</h2>
+          <p>Selecione uma VLAN para destacar o caminho dela na topologia.</p>
+        </header>
+
+        <div class="topo-wrap">
+          <div class="topo-diagram diagram" id="topo-diagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 510" role="img" aria-labelledby="tp-title"><title id="tp-title">Topologia de rede hierárquica com VLANs 10 a 40</title><style>
+.d-bg{fill:var(--d-bg,#ffffff)}
+.d-box{fill:var(--d-box,#ffffff);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-head{fill:var(--d-head,#e5edf7);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-lane{fill:var(--d-lane,#f8fafc);stroke:var(--d-stroke,#1f2937);stroke-width:1}
+.d-t{fill:var(--d-text,#111827);font-family:var(--d-font,Arial,Helvetica,sans-serif);font-size:13px}
+.d-b{font-weight:700}
+.d-s{font-size:11px}
+.d-m{fill:var(--d-muted,#4b5563)}
+.d-ln{stroke:var(--d-line,#1f2937);stroke-width:1.4;fill:none}
+.d-dash{stroke-dasharray:6 4}
+.d-node{fill:var(--d-line,#1f2937)}
+.d-blue{stroke:var(--d-blue,#0369a1)}
+.d-green{stroke:var(--d-green,#047857)}
+.d-purple{stroke:var(--d-purple,#7e22ce)}
+.d-orange{stroke:var(--d-orange,#c2410c)}
+.f-blue{fill:var(--d-blue-f,#e0f2fe)}
+.f-green{fill:var(--d-green-f,#d1fae5)}
+.f-purple{fill:var(--d-purple-f,#f3e8ff)}
+.f-orange{fill:var(--d-orange-f,#ffedd5)}
+</style><defs>
+<marker id="tp-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-node"/></marker>
+<marker id="tp-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10" class="d-ln"/></marker>
+</defs><rect class="d-bg" x="0" y="0" width="880" height="510"/><path d="M370,62 a28,28 0 0 1 40,-30 a38,38 0 0 1 70,6 a26,26 0 0 1 22,46 h-122 a22,22 0 0 1 -10,-22z" class="d-box f-orange d-orange"/><text x="440" y="66" text-anchor="middle" class="d-t d-s d-b">AWS Cloud · MQTT</text><line x1="440" y1="92" x2="440" y2="124" class="d-ln d-orange"/><text x="450" y="112" text-anchor="start" class="d-t d-s d-m">WAN</text><g class="topo-dev" data-vlan="all" tabindex="0"><rect x="340.0" y="124" width="200" height="52" rx="22" class="d-box f-orange d-orange"/><text x="440" y="146" text-anchor="middle" class="d-t d-b">R-Borda Cisco 2911</text><text x="440" y="164" text-anchor="middle" class="d-t d-s d-m">Gateway WAN / NAT</text></g><line x1="440" y1="176" x2="440" y2="214" class="d-ln "/><g class="topo-dev" data-vlan="all" tabindex="0"><rect x="325.0" y="214" width="230" height="52" rx="6" class="d-box f-purple d-purple"/><text x="440" y="236" text-anchor="middle" class="d-t d-b">Core L3 Cisco 3560-24PS</text><text x="440" y="254" text-anchor="middle" class="d-t d-s d-m">ip routing · SVIs VLAN 10–40</text></g><line x1="374" y1="266" x2="224" y2="334" class="d-ln d-purple trunk"/><line x1="494" y1="266" x2="644" y2="334" class="d-ln d-purple trunk"/><line x1="386" y1="266" x2="236" y2="334" class="d-ln d-purple trunk"/><line x1="506" y1="266" x2="656" y2="334" class="d-ln d-purple trunk"/><text x="278" y="296" text-anchor="end" class="d-t d-s d-m">Trunk 802.1Q</text><text x="602" y="296" text-anchor="start" class="d-t d-s d-m">Trunk 802.1Q</text><g class="topo-dev" data-vlan="all" tabindex="0"><rect x="130.0" y="334" width="200" height="52" rx="6" class="d-box f-blue d-blue"/><text x="230" y="356" text-anchor="middle" class="d-t d-b">SW-A Cisco 2960-24TT</text><text x="230" y="374" text-anchor="middle" class="d-t d-s d-m">Acesso L2</text></g><g class="topo-dev" data-vlan="all" tabindex="0"><rect x="550.0" y="334" width="200" height="52" rx="6" class="d-box f-blue d-blue"/><text x="650" y="356" text-anchor="middle" class="d-t d-b">SW-B Cisco 2960-24TT</text><text x="650" y="374" text-anchor="middle" class="d-t d-s d-m">Acesso L2</text></g><g class="topo-link" data-vlan="10"><line x1="230" y1="386" x2="120" y2="444" class="d-ln "/></g><g class="topo-dev" data-vlan="10" tabindex="0"><rect x="25.0" y="444" width="190" height="52" rx="6" class="d-box f-blue d-blue"/><text x="120" y="466" text-anchor="middle" class="d-t d-b">VLAN 10 · Operações</text><text x="120" y="484" text-anchor="middle" class="d-t d-s d-m">10.0.10.0/24</text></g><g class="topo-link" data-vlan="20"><line x1="230" y1="386" x2="330" y2="444" class="d-ln "/></g><g class="topo-dev" data-vlan="20" tabindex="0"><rect x="235.0" y="444" width="190" height="52" rx="6" class="d-box f-green d-green"/><text x="330" y="466" text-anchor="middle" class="d-t d-b">VLAN 20 · Servidores</text><text x="330" y="484" text-anchor="middle" class="d-t d-s d-m">10.0.20.0/24</text></g><g class="topo-link" data-vlan="30"><line x1="650" y1="386" x2="550" y2="444" class="d-ln "/></g><g class="topo-dev" data-vlan="30" tabindex="0"><rect x="455.0" y="444" width="190" height="52" rx="6" class="d-box f-purple d-purple"/><text x="550" y="466" text-anchor="middle" class="d-t d-b">VLAN 30 · IoT Frota</text><text x="550" y="484" text-anchor="middle" class="d-t d-s d-m">10.0.30.0/24</text></g><g class="topo-link" data-vlan="40"><line x1="650" y1="386" x2="760" y2="444" class="d-ln "/></g><g class="topo-dev" data-vlan="40" tabindex="0"><rect x="665.0" y="444" width="190" height="52" rx="6" class="d-box f-orange d-orange"/><text x="760" y="466" text-anchor="middle" class="d-t d-b">VLAN 40 · Visitantes</text><text x="760" y="484" text-anchor="middle" class="d-t d-s d-m">10.0.40.0/24 (AP-PT)</text></g></svg>
+          </div>
+          <aside class="topo-panel card" aria-live="polite">
+            <div class="chip-row" role="group" aria-label="Filtrar VLAN">
+              <button class="chip active" type="button" data-vlan="all">Todas</button>
+              <button class="chip" type="button" data-vlan="10">VLAN 10</button>
+              <button class="chip" type="button" data-vlan="20">VLAN 20</button>
+              <button class="chip" type="button" data-vlan="30">VLAN 30</button>
+              <button class="chip" type="button" data-vlan="40">VLAN 40</button>
+            </div>
+            <div id="vlan-info"></div>
+          </aside>
+        </div>
+
+        <div class="cloud-grid">
+          <article class="mini-card"><span class="ico">⇅</span><h4>Broker MQTT</h4><p>Mensagens leves publicadas pelos ônibus via 4G/5G, com QoS 1 para não perder alertas.</p></article>
+          <article class="mini-card"><span class="ico">⬡</span><h4>Microsserviços</h4><p>Ingestor de telemetria, processador de alertas, API REST de consumo e dashboard da concessionária.</p></article>
+          <article class="mini-card"><span class="ico">⇶</span><h4>ALB + Auto Scaling</h4><p>Picos de horário de rush absorvidos com novas instâncias, sem intervenção manual.</p></article>
+          <article class="mini-card"><span class="ico">🔒</span><h4>TLS 1.3 mútuo</h4><p>Cada gateway IoT se autentica com certificado X.509 próprio; dispositivo sem certificado não publica.</p></article>
+        </div>
+
+        <h3 class="sub-title">Tradução técnico-didática dos comandos Cisco IOS</h3>
+        <div class="cli-tools">
+          <div class="chip-row" role="group" aria-label="Filtrar categoria de comando">
+            <button class="chip active" type="button" data-cat="todos">Todos</button>
+            <button class="chip" type="button" data-cat="vlan">VLAN</button>
+            <button class="chip" type="button" data-cat="roteamento">Roteamento</button>
+            <button class="chip" type="button" data-cat="trunk">Trunk</button>
+            <button class="chip" type="button" data-cat="seguranca">Segurança</button>
+            <button class="chip" type="button" data-cat="verificacao">Verificação</button>
+          </div>
+          <label class="search">
+            <span class="visually-hidden">Buscar comando</span>
+            <input type="search" id="cli-search" placeholder="Buscar comando ou explicação…" autocomplete="off">
+          </label>
+        </div>
+        <div class="table-wrap">
+          <table class="cli-table">
+            <caption class="visually-hidden">Comandos Cisco IOS usados no PIM III e sua tradução</caption>
+            <thead><tr><th scope="col">Comando</th><th scope="col">Modo</th><th scope="col">O que faz, em português claro</th></tr></thead>
+            <tbody id="cli-body"></tbody>
+          </table>
+          <p class="empty-msg" id="cli-empty" hidden>Nenhum comando encontrado.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. ENGENHARIA ============ -->
+    <section class="section" id="engenharia" aria-labelledby="eng-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 3 · PIM IV</span>
+          <h2 id="eng-title">Engenharia de software e diagramas UML</h2>
+          <p>Requisitos levantados com a concessionária, organizados em três sprints e modelados em UML 2.5.</p>
+        </header>
+
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist" aria-label="Diagramas UML">
+            <button role="tab" id="tab-uc" aria-controls="panel-uc" aria-selected="true">Casos de uso</button>
+            <button role="tab" id="tab-cl" aria-controls="panel-cl" aria-selected="false" tabindex="-1">Classes</button>
+            <button role="tab" id="tab-at" aria-controls="panel-at" aria-selected="false" tabindex="-1">Atividades</button>
+          </div>
+          <div class="tab-panel diagram" role="tabpanel" id="panel-uc" aria-labelledby="tab-uc">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" role="img" aria-labelledby="uc-title"><title id="uc-title">Diagrama de casos de uso do sistema de gestão da frota</title><style>
+.d-bg{fill:var(--d-bg,#ffffff)}
+.d-box{fill:var(--d-box,#ffffff);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-head{fill:var(--d-head,#e5edf7);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-lane{fill:var(--d-lane,#f8fafc);stroke:var(--d-stroke,#1f2937);stroke-width:1}
+.d-t{fill:var(--d-text,#111827);font-family:var(--d-font,Arial,Helvetica,sans-serif);font-size:13px}
+.d-b{font-weight:700}
+.d-s{font-size:11px}
+.d-m{fill:var(--d-muted,#4b5563)}
+.d-ln{stroke:var(--d-line,#1f2937);stroke-width:1.4;fill:none}
+.d-dash{stroke-dasharray:6 4}
+.d-node{fill:var(--d-line,#1f2937)}
+.d-blue{stroke:var(--d-blue,#0369a1)}
+.d-green{stroke:var(--d-green,#047857)}
+.d-purple{stroke:var(--d-purple,#7e22ce)}
+.d-orange{stroke:var(--d-orange,#c2410c)}
+.f-blue{fill:var(--d-blue-f,#e0f2fe)}
+.f-green{fill:var(--d-green-f,#d1fae5)}
+.f-purple{fill:var(--d-purple-f,#f3e8ff)}
+.f-orange{fill:var(--d-orange-f,#ffedd5)}
+</style><defs>
+<marker id="uc-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-node"/></marker>
+<marker id="uc-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10" class="d-ln"/></marker>
+</defs><rect class="d-bg" x="0" y="0" width="900" height="590"/><rect x="220" y="14" width="460" height="560" rx="10" class="d-lane"/><text x="450" y="36" text-anchor="middle" class="d-t d-b">Sistema de Gestão da Frota — UrbanoAcessível</text><g class="uc-case" data-i="0"><ellipse cx="450" cy="80" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="84" text-anchor="middle" class="d-t ">Autenticar operador (RF07)</text></g><g class="uc-case" data-i="1"><ellipse cx="450" cy="138" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="142" text-anchor="middle" class="d-t ">Cadastrar ônibus (RF01)</text></g><g class="uc-case" data-i="2"><ellipse cx="450" cy="196" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="200" text-anchor="middle" class="d-t ">Agendar preventiva (RF04)</text></g><g class="uc-case" data-i="3"><ellipse cx="450" cy="254" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="258" text-anchor="middle" class="d-t ">Emitir relatório de frota (RF06)</text></g><g class="uc-case" data-i="4"><ellipse cx="450" cy="312" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="316" text-anchor="middle" class="d-t ">Consultar histórico (RF05)</text></g><g class="uc-case" data-i="5"><ellipse cx="450" cy="370" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="374" text-anchor="middle" class="d-t ">Registrar diagnóstico (RF02)</text></g><g class="uc-case" data-i="6"><ellipse cx="450" cy="428" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="432" text-anchor="middle" class="d-t ">Concluir ordem de serviço</text></g><g class="uc-case" data-i="7"><ellipse cx="450" cy="486" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="490" text-anchor="middle" class="d-t ">Abrir ordem de serviço (RF03)</text></g><g class="uc-case" data-i="8"><ellipse cx="450" cy="544" rx="128" ry="21" class="d-box f-blue d-blue"/><text x="450" y="548" text-anchor="middle" class="d-t ">Ingerir log telemétrico (RF08)</text></g><g class="uc-actor"><circle cx="105" cy="148" r="12" class="d-ln d-green"/><line x1="105" y1="160" x2="105" y2="194" class="d-ln d-green"/><line x1="85" y1="172" x2="125" y2="172" class="d-ln d-green"/><line x1="105" y1="194" x2="89" y2="222" class="d-ln d-green"/><line x1="105" y1="194" x2="121" y2="222" class="d-ln d-green"/><text x="105" y="242" text-anchor="middle" class="d-t d-b">Gestor de</text><text x="105" y="257" text-anchor="middle" class="d-t d-b">Frota</text></g><g class="uc-actor"><circle cx="105" cy="398" r="12" class="d-ln d-orange"/><line x1="105" y1="410" x2="105" y2="444" class="d-ln d-orange"/><line x1="85" y1="422" x2="125" y2="422" class="d-ln d-orange"/><line x1="105" y1="444" x2="89" y2="472" class="d-ln d-orange"/><line x1="105" y1="444" x2="121" y2="472" class="d-ln d-orange"/><text x="105" y="492" text-anchor="middle" class="d-t d-b">Fiscal</text></g><g class="uc-actor"><circle cx="795" cy="218" r="12" class="d-ln d-purple"/><line x1="795" y1="230" x2="795" y2="264" class="d-ln d-purple"/><line x1="775" y1="242" x2="815" y2="242" class="d-ln d-purple"/><line x1="795" y1="264" x2="779" y2="292" class="d-ln d-purple"/><line x1="795" y1="264" x2="811" y2="292" class="d-ln d-purple"/><text x="795" y="312" text-anchor="middle" class="d-t d-b">Mecânico de</text><text x="795" y="327" text-anchor="middle" class="d-t d-b">Garagem</text></g><g class="uc-actor"><circle cx="795" cy="478" r="12" class="d-ln d-blue"/><line x1="795" y1="490" x2="795" y2="524" class="d-ln d-blue"/><line x1="775" y1="502" x2="815" y2="502" class="d-ln d-blue"/><line x1="795" y1="524" x2="779" y2="552" class="d-ln d-blue"/><line x1="795" y1="524" x2="811" y2="552" class="d-ln d-blue"/><text x="795" y="572" text-anchor="middle" class="d-t d-b">Sistema IoT</text><text x="795" y="587" text-anchor="middle" class="d-t d-b">«sistema»</text></g><line x1="128" y1="185" x2="322" y2="80" class="d-ln d-green"/><line x1="128" y1="185" x2="322" y2="138" class="d-ln d-green"/><line x1="128" y1="185" x2="322" y2="196" class="d-ln d-green"/><line x1="128" y1="185" x2="322" y2="254" class="d-ln d-green"/><line x1="128" y1="185" x2="322" y2="312" class="d-ln d-green"/><line x1="128" y1="435" x2="322" y2="80" class="d-ln d-orange"/><line x1="128" y1="435" x2="322" y2="254" class="d-ln d-orange"/><line x1="128" y1="435" x2="322" y2="312" class="d-ln d-orange"/><line x1="772" y1="255" x2="578" y2="80" class="d-ln d-purple"/><line x1="772" y1="255" x2="578" y2="312" class="d-ln d-purple"/><line x1="772" y1="255" x2="578" y2="370" class="d-ln d-purple"/><line x1="772" y1="255" x2="578" y2="428" class="d-ln d-purple"/><line x1="772" y1="255" x2="578" y2="486" class="d-ln d-purple"/><line x1="772" y1="515" x2="578" y2="544" class="d-ln d-blue"/><line x1="450" y1="507" x2="450" y2="523" class="d-ln d-dash" marker-end="url(#uc-open)"/><text x="462" y="522" text-anchor="start" class="d-t d-s d-m">«extend» [sensor = FAIL]</text></svg>
+            <p class="caption">Quatro atores: Gestor, Fiscal, Mecânico e o Sistema IoT. A abertura de OS estende a ingestão de telemetria quando o sensor reporta FAIL.</p>
+          </div>
+          <div class="tab-panel diagram" role="tabpanel" id="panel-cl" aria-labelledby="tab-cl" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" role="img" aria-labelledby="cl-title"><title id="cl-title">Diagrama de classes do sistema</title><style>
+.d-bg{fill:var(--d-bg,#ffffff)}
+.d-box{fill:var(--d-box,#ffffff);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-head{fill:var(--d-head,#e5edf7);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-lane{fill:var(--d-lane,#f8fafc);stroke:var(--d-stroke,#1f2937);stroke-width:1}
+.d-t{fill:var(--d-text,#111827);font-family:var(--d-font,Arial,Helvetica,sans-serif);font-size:13px}
+.d-b{font-weight:700}
+.d-s{font-size:11px}
+.d-m{fill:var(--d-muted,#4b5563)}
+.d-ln{stroke:var(--d-line,#1f2937);stroke-width:1.4;fill:none}
+.d-dash{stroke-dasharray:6 4}
+.d-node{fill:var(--d-line,#1f2937)}
+.d-blue{stroke:var(--d-blue,#0369a1)}
+.d-green{stroke:var(--d-green,#047857)}
+.d-purple{stroke:var(--d-purple,#7e22ce)}
+.d-orange{stroke:var(--d-orange,#c2410c)}
+.f-blue{fill:var(--d-blue-f,#e0f2fe)}
+.f-green{fill:var(--d-green-f,#d1fae5)}
+.f-purple{fill:var(--d-purple-f,#f3e8ff)}
+.f-orange{fill:var(--d-orange-f,#ffedd5)}
+</style><defs>
+<marker id="cl-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-node"/></marker>
+<marker id="cl-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10" class="d-ln"/></marker>
+</defs><rect class="d-bg" x="0" y="0" width="900" height="590"/><g class="cls"><rect x="30" y="20" width="300" height="246" class="d-box d-blue"/><rect x="30" y="20" width="300" height="32" class="d-head d-blue"/><text x="180.0" y="41" text-anchor="middle" class="d-t d-b">Veiculo</text><line x1="30" y1="197" x2="330" y2="197" class="d-ln d-blue"/><text x="42" y="72" text-anchor="start" class="d-t d-s">- id: int</text><text x="42" y="91" text-anchor="start" class="d-t d-s">- placa: char[9]</text><text x="42" y="110" text-anchor="start" class="d-t d-s">- prefixo: char[12]</text><text x="42" y="129" text-anchor="start" class="d-t d-s">- modelo: char[30]</text><text x="42" y="148" text-anchor="start" class="d-t d-s">- ano: int</text><text x="42" y="167" text-anchor="start" class="d-t d-s">- statusElevador: Status</text><text x="42" y="186" text-anchor="start" class="d-t d-s">- statusRampa: Status</text><text x="42" y="217" text-anchor="start" class="d-t d-s">+ cadastrar(): void</text><text x="42" y="236" text-anchor="start" class="d-t d-s">+ registrarDiagnostico(): void</text><text x="42" y="255" text-anchor="start" class="d-t d-s">+ buscarPorPlaca(placa): int</text></g><g class="cls"><rect x="570" y="20" width="300" height="284" class="d-box d-purple"/><rect x="570" y="20" width="300" height="32" class="d-head d-purple"/><text x="720.0" y="41" text-anchor="middle" class="d-t d-b">OrdemServico</text><line x1="570" y1="216" x2="870" y2="216" class="d-ln d-purple"/><text x="582" y="72" text-anchor="start" class="d-t d-s">- idOs: int</text><text x="582" y="91" text-anchor="start" class="d-t d-s">- placaVeiculo: char[9]</text><text x="582" y="110" text-anchor="start" class="d-t d-s">- tipo: TipoOS</text><text x="582" y="129" text-anchor="start" class="d-t d-s">- descricaoFalha: char[100]</text><text x="582" y="148" text-anchor="start" class="d-t d-s">- dataAbertura: DataHora</text><text x="582" y="167" text-anchor="start" class="d-t d-s">- dataAgendada: DataHora</text><text x="582" y="186" text-anchor="start" class="d-t d-s">- dataConclusao: DataHora</text><text x="582" y="205" text-anchor="start" class="d-t d-s">- status: StatusOS</text><text x="582" y="236" text-anchor="start" class="d-t d-s">+ abrir(): int</text><text x="582" y="255" text-anchor="start" class="d-t d-s">+ agendarPreventiva(): void</text><text x="582" y="274" text-anchor="start" class="d-t d-s">+ concluir(): void</text><text x="582" y="293" text-anchor="start" class="d-t d-s">+ consultarHistorico(placa): void</text></g><g class="cls"><rect x="570" y="400" width="300" height="170" class="d-box d-green"/><rect x="570" y="400" width="300" height="32" class="d-head d-green"/><text x="720.0" y="421" text-anchor="middle" class="d-t d-b">Mecanico</text><line x1="570" y1="520" x2="870" y2="520" class="d-ln d-green"/><text x="582" y="452" text-anchor="start" class="d-t d-s">- idMecanico: int</text><text x="582" y="471" text-anchor="start" class="d-t d-s">- nome: char[100]</text><text x="582" y="490" text-anchor="start" class="d-t d-s">- cpf: char[14]</text><text x="582" y="509" text-anchor="start" class="d-t d-s">- especialidade: char[50]</text><text x="582" y="540" text-anchor="start" class="d-t d-s">+ autenticar(): Perfil</text><text x="582" y="559" text-anchor="start" class="d-t d-s">+ executarOS(idOs): void</text></g><g class="cls"><rect x="30" y="400" width="300" height="170" class="d-box d-orange"/><rect x="30" y="400" width="300" height="32" class="d-head d-orange"/><text x="180.0" y="421" text-anchor="middle" class="d-t d-b">TelemetriaLog</text><line x1="30" y1="520" x2="330" y2="520" class="d-ln d-orange"/><text x="42" y="452" text-anchor="start" class="d-t d-s">- busId: char[12]</text><text x="42" y="471" text-anchor="start" class="d-t d-s">- timestamp: char[25]</text><text x="42" y="490" text-anchor="start" class="d-t d-s">- rampStatus: char[12]</text><text x="42" y="509" text-anchor="start" class="d-t d-s">- batteryVoltage: double</text><text x="42" y="540" text-anchor="start" class="d-t d-s">+ interpretarPacote(json): int</text><text x="42" y="559" text-anchor="start" class="d-t d-s">+ processarPacote(json): int</text></g><line x1="330" y1="140" x2="570" y2="140" class="d-ln "/><text x="342" y="132" text-anchor="start" class="d-t d-s">1</text><text x="558" y="132" text-anchor="end" class="d-t d-s">0..*</text><text x="450" y="132" text-anchor="middle" class="d-t d-s d-m">possui</text><line x1="720" y1="304" x2="720" y2="400" class="d-ln "/><text x="728" y="320" text-anchor="start" class="d-t d-s">0..*</text><text x="728" y="392" text-anchor="start" class="d-t d-s">0..1</text><text x="712" y="356.0" text-anchor="end" class="d-t d-s d-m">executa</text><line x1="180" y1="266" x2="180" y2="400" class="d-ln "/><text x="188" y="282" text-anchor="start" class="d-t d-s">1</text><text x="188" y="392" text-anchor="start" class="d-t d-s">0..*</text><text x="172" y="337.0" text-anchor="end" class="d-t d-s d-m">monitora</text><line x1="330" y1="470" x2="568" y2="300" class="d-ln d-dash" marker-end="url(#cl-open)"/><text x="420" y="372" text-anchor="end" class="d-t d-s d-m">«abre automaticamente»</text></svg>
+            <p class="caption">As classes viram <code>struct</code> em C; os métodos viram funções que recebem o ponteiro da estrutura.</p>
+          </div>
+          <div class="tab-panel diagram" role="tabpanel" id="panel-at" aria-labelledby="tab-at" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" role="img" aria-labelledby="at-title"><title id="at-title">Diagrama de atividades: da falha do elevador ao fechamento da OS</title><style>
+.d-bg{fill:var(--d-bg,#ffffff)}
+.d-box{fill:var(--d-box,#ffffff);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-head{fill:var(--d-head,#e5edf7);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-lane{fill:var(--d-lane,#f8fafc);stroke:var(--d-stroke,#1f2937);stroke-width:1}
+.d-t{fill:var(--d-text,#111827);font-family:var(--d-font,Arial,Helvetica,sans-serif);font-size:13px}
+.d-b{font-weight:700}
+.d-s{font-size:11px}
+.d-m{fill:var(--d-muted,#4b5563)}
+.d-ln{stroke:var(--d-line,#1f2937);stroke-width:1.4;fill:none}
+.d-dash{stroke-dasharray:6 4}
+.d-node{fill:var(--d-line,#1f2937)}
+.d-blue{stroke:var(--d-blue,#0369a1)}
+.d-green{stroke:var(--d-green,#047857)}
+.d-purple{stroke:var(--d-purple,#7e22ce)}
+.d-orange{stroke:var(--d-orange,#c2410c)}
+.f-blue{fill:var(--d-blue-f,#e0f2fe)}
+.f-green{fill:var(--d-green-f,#d1fae5)}
+.f-purple{fill:var(--d-purple-f,#f3e8ff)}
+.f-orange{fill:var(--d-orange-f,#ffedd5)}
+</style><defs>
+<marker id="at-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-node"/></marker>
+<marker id="at-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10" class="d-ln"/></marker>
+</defs><rect class="d-bg" x="0" y="0" width="900" height="660"/><rect x="4" y="6" width="212" height="648" rx="8" class="d-lane"/><text x="110.0" y="30" text-anchor="middle" class="d-t d-b">Sistema IoT (ônibus)</text><rect x="224" y="6" width="432" height="648" rx="8" class="d-lane"/><text x="440.0" y="30" text-anchor="middle" class="d-t d-b">Sistema de Gestão</text><rect x="664" y="6" width="232" height="648" rx="8" class="d-lane"/><text x="780.0" y="30" text-anchor="middle" class="d-t d-b">Mecânico de Garagem</text><circle cx="110" cy="70" r="10" class="d-node"/><line x1="110" y1="80" x2="110" y2="110" class="d-ln " marker-end="url(#at-arr)"/><rect x="20.0" y="109.0" width="180" height="52" rx="16" class="d-box f-blue d-blue"/><text x="110" y="131.5" text-anchor="middle" class="d-t ">Sensor detecta falha</text><text x="110" y="146.5" text-anchor="middle" class="d-t ">no elevador</text><line x1="110" y1="160" x2="110" y2="190" class="d-ln " marker-end="url(#at-arr)"/><rect x="20.0" y="189.0" width="180" height="52" rx="16" class="d-box f-blue d-blue"/><text x="110" y="211.5" text-anchor="middle" class="d-t ">Publica pacote JSON</text><text x="110" y="226.5" text-anchor="middle" class="d-t ">no broker MQTT</text><line x1="200" y1="215" x2="285" y2="215" class="d-ln " marker-end="url(#at-arr)"/><rect x="285.0" y="189.0" width="190" height="52" rx="16" class="d-box f-purple d-purple"/><text x="380" y="211.5" text-anchor="middle" class="d-t ">Recebe e grava log</text><text x="380" y="226.5" text-anchor="middle" class="d-t ">telemétrico (RF08)</text><line x1="380" y1="241" x2="380" y2="270" class="d-ln " marker-end="url(#at-arr)"/><polygon points="380,270 460,300 380,330 300,300" class="d-box f-orange d-orange"/><text x="380" y="296.5" text-anchor="middle" class="d-t d-s">Prefixo</text><text x="380" y="311.5" text-anchor="middle" class="d-t d-s">cadastrado?</text><line x1="460" y1="300" x2="510" y2="300" class="d-ln " marker-end="url(#at-arr)"/><text x="485" y="292" text-anchor="middle" class="d-t d-s d-m">[não]</text><rect x="515.0" y="274.0" width="130" height="52" rx="16" class="d-box f-purple d-purple"/><text x="580" y="296.5" text-anchor="middle" class="d-t ">Descartar</text><text x="580" y="311.5" text-anchor="middle" class="d-t ">pacote</text><line x1="580" y1="326" x2="580" y2="348" class="d-ln " marker-end="url(#at-arr)"/><circle cx="580" cy="362" r="12" class="d-ln"/><circle cx="580" cy="362" r="7" class="d-node"/><line x1="380" y1="330" x2="380" y2="380" class="d-ln " marker-end="url(#at-arr)"/><text x="388" y="360" text-anchor="start" class="d-t d-s d-m">[sim]</text><polygon points="380,380 460,410 380,440 300,410" class="d-box f-orange d-orange"/><text x="380" y="406.5" text-anchor="middle" class="d-t d-s">Status do</text><text x="380" y="421.5" text-anchor="middle" class="d-t d-s">sensor = FAIL?</text><line x1="460" y1="410" x2="510" y2="410" class="d-ln " marker-end="url(#at-arr)"/><text x="485" y="402" text-anchor="middle" class="d-t d-s d-m">[não]</text><rect x="515.0" y="384.0" width="130" height="52" rx="16" class="d-box f-purple d-purple"/><text x="580" y="406.5" text-anchor="middle" class="d-t ">Atualizar status</text><text x="580" y="421.5" text-anchor="middle" class="d-t ">(OK / ALERTA)</text><line x1="580" y1="436" x2="580" y2="458" class="d-ln " marker-end="url(#at-arr)"/><circle cx="580" cy="472" r="12" class="d-ln"/><circle cx="580" cy="472" r="7" class="d-node"/><line x1="380" y1="440" x2="380" y2="478" class="d-ln " marker-end="url(#at-arr)"/><text x="388" y="462" text-anchor="start" class="d-t d-s d-m">[sim]</text><rect x="280.0" y="480.0" width="200" height="52" rx="16" class="d-box f-purple d-purple"/><text x="380" y="502.5" text-anchor="middle" class="d-t ">Marcar QUEBRADO e abrir</text><text x="380" y="517.5" text-anchor="middle" class="d-t ">OS automática (RF03)</text><line x1="480" y1="506" x2="688" y2="506" class="d-ln " marker-end="url(#at-arr)"/><rect x="695.0" y="480.0" width="170" height="52" rx="16" class="d-box f-green d-green"/><text x="780" y="502.5" text-anchor="middle" class="d-t ">Executar reparo</text><text x="780" y="517.5" text-anchor="middle" class="d-t ">do elevador</text><line x1="780" y1="532" x2="780" y2="568" class="d-ln " marker-end="url(#at-arr)"/><rect x="695.0" y="573.5" width="170" height="37" rx="16" class="d-box f-green d-green"/><text x="780" y="596.0" text-anchor="middle" class="d-t ">Concluir OS</text><line x1="695" y1="592" x2="482" y2="592" class="d-ln " marker-end="url(#at-arr)"/><rect x="280.0" y="566.0" width="200" height="52" rx="16" class="d-box f-purple d-purple"/><text x="380" y="588.5" text-anchor="middle" class="d-t ">Restaurar status</text><text x="380" y="603.5" text-anchor="middle" class="d-t ">OPERACIONAL</text><line x1="280" y1="592" x2="152" y2="592" class="d-ln " marker-end="url(#at-arr)"/><circle cx="140" cy="592" r="12" class="d-ln"/><circle cx="140" cy="592" r="7" class="d-node"/></svg>
+            <p class="caption">Fluxo com raias: da falha detectada no ônibus até o veículo voltar a OPERACIONAL.</p>
+          </div>
+        </div>
+
+        <h3 class="sub-title">Matriz de requisitos</h3>
+        <div class="chip-row" role="group" aria-label="Filtrar requisitos">
+          <button class="chip active" type="button" data-req="todos">Todos</button>
+          <button class="chip" type="button" data-req="RF">Funcionais</button>
+          <button class="chip" type="button" data-req="RNF">Não funcionais</button>
+        </div>
+        <div class="req-grid" id="req-grid"></div>
+
+        <h3 class="sub-title">Planejamento ágil (Scrum + XP)</h3>
+        <div class="sprint-grid">
+          <article class="sprint card"><span class="tag purple">Sprint 1 · 2 semanas</span><h4>Modelagem e requisitos</h4>
+            <ul><li>US01 — Como gestor, quero cadastrar ônibus para controlar a frota acessível.</li><li>US02 — Como fiscal, quero ver o percentual da frota acessível para cobrar a concessionária.</li><li>Entrega: requisitos, UML e DER em 3FN.</li></ul></article>
+          <article class="sprint card"><span class="tag blue">Sprint 2 · 2 semanas</span><h4>Algoritmos em C</h4>
+            <ul><li>US03 — Como mecânico, quero registrar o diagnóstico do elevador.</li><li>US04 — Como sistema IoT, quero que uma falha abra OS sozinha.</li><li>Entrega: programa modular, persistência em arquivo, testes de mesa.</li></ul></article>
+          <article class="sprint card"><span class="tag green">Sprint 3 · 2 semanas</span><h4>Integração e documentação</h4>
+            <ul><li>US05 — Como gestor, quero o histórico de manutenção por placa.</li><li>Scripts SQL, coleção MongoDB e relatório ABNT.</li><li>Entrega: release 1.0 e apresentação.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. BANCO DE DADOS ============ -->
+    <section class="section alt" id="banco" aria-labelledby="banco-title">
+      <div class="parallax-deco right" data-speed="-0.25" aria-hidden="true"><span></span><span></span></div>
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 4 · PIM IV</span>
+          <h2 id="banco-title">Arquitetura de banco de dados — SQL e NoSQL</h2>
+          <p>Persistência poliglota: o relacional garante a integridade das ordens de serviço; o documental absorve a telemetria que chega a cada 5 segundos.</p>
+        </header>
+
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist" aria-label="Artefatos de banco de dados">
+            <button role="tab" id="tab-er" aria-controls="panel-er" aria-selected="true">Diagrama ER</button>
+            <button role="tab" id="tab-ddl" aria-controls="panel-ddl" aria-selected="false" tabindex="-1">DDL</button>
+            <button role="tab" id="tab-dml" aria-controls="panel-dml" aria-selected="false" tabindex="-1">DML / JOIN</button>
+            <button role="tab" id="tab-nosql" aria-controls="panel-nosql" aria-selected="false" tabindex="-1">NoSQL (MongoDB)</button>
+          </div>
+          <div class="tab-panel diagram" role="tabpanel" id="panel-er" aria-labelledby="tab-er">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 305" role="img" aria-labelledby="er-title"><title id="er-title">Diagrama entidade-relacionamento do banco relacional</title><style>
+.d-bg{fill:var(--d-bg,#ffffff)}
+.d-box{fill:var(--d-box,#ffffff);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-head{fill:var(--d-head,#e5edf7);stroke:var(--d-stroke,#1f2937);stroke-width:1.4}
+.d-lane{fill:var(--d-lane,#f8fafc);stroke:var(--d-stroke,#1f2937);stroke-width:1}
+.d-t{fill:var(--d-text,#111827);font-family:var(--d-font,Arial,Helvetica,sans-serif);font-size:13px}
+.d-b{font-weight:700}
+.d-s{font-size:11px}
+.d-m{fill:var(--d-muted,#4b5563)}
+.d-ln{stroke:var(--d-line,#1f2937);stroke-width:1.4;fill:none}
+.d-dash{stroke-dasharray:6 4}
+.d-node{fill:var(--d-line,#1f2937)}
+.d-blue{stroke:var(--d-blue,#0369a1)}
+.d-green{stroke:var(--d-green,#047857)}
+.d-purple{stroke:var(--d-purple,#7e22ce)}
+.d-orange{stroke:var(--d-orange,#c2410c)}
+.f-blue{fill:var(--d-blue-f,#e0f2fe)}
+.f-green{fill:var(--d-green-f,#d1fae5)}
+.f-purple{fill:var(--d-purple-f,#f3e8ff)}
+.f-orange{fill:var(--d-orange-f,#ffedd5)}
+</style><defs>
+<marker id="er-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="d-node"/></marker>
+<marker id="er-open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10" class="d-ln"/></marker>
+</defs><rect class="d-bg" x="0" y="0" width="900" height="305"/><rect x="20" y="20" width="270" height="214" rx="6" class="d-box d-blue"/><rect x="20" y="20" width="270" height="30" rx="6" class="d-head d-blue"/><text x="155.0" y="40" text-anchor="middle" class="d-t d-b">TB_VEICULO</text><text x="30" y="68" text-anchor="start" class="d-t d-s d-b">PK</text><text x="64" y="68" text-anchor="start" class="d-t d-s">ID_VEICULO</text><text x="280" y="68" text-anchor="end" class="d-t d-s d-m">INT</text><text x="30" y="90" text-anchor="start" class="d-t d-s d-b">UK</text><text x="64" y="90" text-anchor="start" class="d-t d-s">PLACA</text><text x="280" y="90" text-anchor="end" class="d-t d-s d-m">VARCHAR(8)</text><text x="30" y="112" text-anchor="start" class="d-t d-s d-b">UK</text><text x="64" y="112" text-anchor="start" class="d-t d-s">PREFIXO_IOT</text><text x="280" y="112" text-anchor="end" class="d-t d-s d-m">VARCHAR(12)</text><text x="30" y="134" text-anchor="start" class="d-t d-s d-b"></text><text x="64" y="134" text-anchor="start" class="d-t d-s">MODELO</text><text x="280" y="134" text-anchor="end" class="d-t d-s d-m">VARCHAR(50)</text><text x="30" y="156" text-anchor="start" class="d-t d-s d-b"></text><text x="64" y="156" text-anchor="start" class="d-t d-s">ANO_FABRICACAO</text><text x="280" y="156" text-anchor="end" class="d-t d-s d-m">INT</text><text x="30" y="178" text-anchor="start" class="d-t d-s d-b"></text><text x="64" y="178" text-anchor="start" class="d-t d-s">STATUS_ELEVADOR</text><text x="280" y="178" text-anchor="end" class="d-t d-s d-m">VARCHAR(20)</text><text x="30" y="200" text-anchor="start" class="d-t d-s d-b"></text><text x="64" y="200" text-anchor="start" class="d-t d-s">STATUS_RAMPA</text><text x="280" y="200" text-anchor="end" class="d-t d-s d-m">VARCHAR(20)</text><text x="30" y="222" text-anchor="start" class="d-t d-s d-b"></text><text x="64" y="222" text-anchor="start" class="d-t d-s">DATA_CADASTRO</text><text x="280" y="222" text-anchor="end" class="d-t d-s d-m">TIMESTAMP</text><rect x="330" y="20" width="270" height="236" rx="6" class="d-box d-purple"/><rect x="330" y="20" width="270" height="30" rx="6" class="d-head d-purple"/><text x="465.0" y="40" text-anchor="middle" class="d-t d-b">TB_ORDEM_SERVICO</text><text x="340" y="68" text-anchor="start" class="d-t d-s d-b">PK</text><text x="374" y="68" text-anchor="start" class="d-t d-s">ID_OS</text><text x="590" y="68" text-anchor="end" class="d-t d-s d-m">INT</text><text x="340" y="90" text-anchor="start" class="d-t d-s d-b">FK</text><text x="374" y="90" text-anchor="start" class="d-t d-s">ID_VEICULO</text><text x="590" y="90" text-anchor="end" class="d-t d-s d-m">INT</text><text x="340" y="112" text-anchor="start" class="d-t d-s d-b">FK</text><text x="374" y="112" text-anchor="start" class="d-t d-s">ID_MECANICO</text><text x="590" y="112" text-anchor="end" class="d-t d-s d-m">INT NULL</text><text x="340" y="134" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="134" text-anchor="start" class="d-t d-s">TIPO_OS</text><text x="590" y="134" text-anchor="end" class="d-t d-s d-m">VARCHAR(12)</text><text x="340" y="156" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="156" text-anchor="start" class="d-t d-s">DESCRICAO_FALHA</text><text x="590" y="156" text-anchor="end" class="d-t d-s d-m">TEXT</text><text x="340" y="178" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="178" text-anchor="start" class="d-t d-s">DATA_ABERTURA</text><text x="590" y="178" text-anchor="end" class="d-t d-s d-m">DATETIME</text><text x="340" y="200" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="200" text-anchor="start" class="d-t d-s">DATA_AGENDADA</text><text x="590" y="200" text-anchor="end" class="d-t d-s d-m">DATETIME</text><text x="340" y="222" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="222" text-anchor="start" class="d-t d-s">DATA_CONCLUSAO</text><text x="590" y="222" text-anchor="end" class="d-t d-s d-m">DATETIME</text><text x="340" y="244" text-anchor="start" class="d-t d-s d-b"></text><text x="374" y="244" text-anchor="start" class="d-t d-s">STATUS_OS</text><text x="590" y="244" text-anchor="end" class="d-t d-s d-m">VARCHAR(20)</text><rect x="640" y="20" width="240" height="126" rx="6" class="d-box d-green"/><rect x="640" y="20" width="240" height="30" rx="6" class="d-head d-green"/><text x="760.0" y="40" text-anchor="middle" class="d-t d-b">TB_MECANICO</text><text x="650" y="68" text-anchor="start" class="d-t d-s d-b">PK</text><text x="684" y="68" text-anchor="start" class="d-t d-s">ID_MECANICO</text><text x="870" y="68" text-anchor="end" class="d-t d-s d-m">INT</text><text x="650" y="90" text-anchor="start" class="d-t d-s d-b"></text><text x="684" y="90" text-anchor="start" class="d-t d-s">NOME</text><text x="870" y="90" text-anchor="end" class="d-t d-s d-m">VARCHAR(100)</text><text x="650" y="112" text-anchor="start" class="d-t d-s d-b">UK</text><text x="684" y="112" text-anchor="start" class="d-t d-s">CPF</text><text x="870" y="112" text-anchor="end" class="d-t d-s d-m">VARCHAR(14)</text><text x="650" y="134" text-anchor="start" class="d-t d-s d-b"></text><text x="684" y="134" text-anchor="start" class="d-t d-s">ESPECIALIDADE</text><text x="870" y="134" text-anchor="end" class="d-t d-s d-m">VARCHAR(50)</text><polyline points="290,64 310,64 310,86 330,86" class="d-ln "/><line x1="296" y1="57" x2="296" y2="71" class="d-ln "/><line x1="301" y1="57" x2="301" y2="71" class="d-ln "/><line x1="318" y1="86" x2="330" y2="78" class="d-ln "/><line x1="318" y1="86" x2="330" y2="94" class="d-ln "/><circle cx="314" cy="86" r="3.5" class="d-box"/><polyline points="600,108 620,108 620,64 640,64" class="d-ln "/><line x1="600" y1="108" x2="612" y2="100" class="d-ln "/><line x1="600" y1="108" x2="612" y2="116" class="d-ln "/><circle cx="616" cy="108" r="3.5" class="d-box"/><line x1="634" y1="57" x2="634" y2="71" class="d-ln "/><circle cx="626" cy="64" r="3.5" class="d-box"/><text x="450" y="290" text-anchor="middle" class="d-t d-s d-m">1 veículo possui 0..N ordens  •  1 mecânico (opcional) executa 0..N ordens</text></svg>
+            <div class="nf-grid">
+              <div class="nf"><b>1FN</b><span>Valores atômicos: status do elevador e da rampa em colunas separadas, sem listas.</span></div>
+              <div class="nf"><b>2FN</b><span>Chaves simples: todo atributo depende da chave inteira.</span></div>
+              <div class="nf"><b>3FN</b><span>Nome do mecânico fica em TB_MECANICO, não repetido em cada OS.</span></div>
+            </div>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-ddl" aria-labelledby="tab-ddl" hidden>
+            <div class="code-block"><button class="copy-btn" type="button">Copiar</button><pre><code class="lang-sql">CREATE TABLE TB_VEICULO (
+    ID_VEICULO      INT AUTO_INCREMENT PRIMARY KEY,
+    PLACA           VARCHAR(8)  NOT NULL UNIQUE,
+    PREFIXO_IOT     VARCHAR(12) NOT NULL UNIQUE,
+    MODELO          VARCHAR(50) NOT NULL,
+    ANO_FABRICACAO  INT         NOT NULL,
+    STATUS_ELEVADOR VARCHAR(20) DEFAULT 'OPERACIONAL',
+    STATUS_RAMPA    VARCHAR(20) DEFAULT 'OPERACIONAL',
+    DATA_CADASTRO   TIMESTAMP   DEFAULT CURRENT_TIMESTAMP,
+    CHECK (STATUS_ELEVADOR IN ('OPERACIONAL','ALERTA','QUEBRADO')),
+    CHECK (STATUS_RAMPA    IN ('OPERACIONAL','ALERTA','QUEBRADO'))
+);
+
+CREATE TABLE TB_MECANICO (
+    ID_MECANICO   INT AUTO_INCREMENT PRIMARY KEY,
+    NOME          VARCHAR(100) NOT NULL,
+    CPF           VARCHAR(14)  NOT NULL UNIQUE,
+    ESPECIALIDADE VARCHAR(50)  NOT NULL
+);
+
+-- ID_MECANICO aceita NULL: a OS aberta automaticamente pelo sensor IoT
+-- ainda nao tem responsavel; o gestor o atribui na triagem.
+CREATE TABLE TB_ORDEM_SERVICO (
+    ID_OS           INT AUTO_INCREMENT PRIMARY KEY,
+    ID_VEICULO      INT          NOT NULL,
+    ID_MECANICO     INT          NULL,
+    TIPO_OS         VARCHAR(12)  NOT NULL DEFAULT 'CORRETIVA',
+    DESCRICAO_FALHA TEXT         NOT NULL,
+    DATA_ABERTURA   DATETIME     NOT NULL,
+    DATA_AGENDADA   DATETIME     NULL,
+    DATA_CONCLUSAO  DATETIME     NULL,
+    STATUS_OS       VARCHAR(20)  DEFAULT 'EM_ABERTO',
+    CHECK (TIPO_OS   IN ('CORRETIVA','PREVENTIVA')),
+    CHECK (STATUS_OS IN ('EM_ABERTO','AGENDADA','CONCLUIDA')),
+    FOREIGN KEY (ID_VEICULO)  REFERENCES TB_VEICULO(ID_VEICULO),
+    FOREIGN KEY (ID_MECANICO) REFERENCES TB_MECANICO(ID_MECANICO)
+);
+
+CREATE INDEX IX_OS_STATUS ON TB_ORDEM_SERVICO (STATUS_OS, DATA_ABERTURA);</code></pre></div>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-dml" aria-labelledby="tab-dml" hidden>
+            <div class="code-block"><button class="copy-btn" type="button">Copiar</button><pre><code class="lang-sql">-- Consulta 1: ordens em aberto com veiculo e mecanico (INNER JOIN)
+SELECT os.ID_OS, v.PLACA, v.MODELO, m.NOME AS MECANICO_RESPONSAVEL,
+       os.DESCRICAO_FALHA, os.STATUS_OS, os.DATA_ABERTURA
+FROM TB_ORDEM_SERVICO os
+INNER JOIN TB_VEICULO  v ON os.ID_VEICULO  = v.ID_VEICULO
+INNER JOIN TB_MECANICO m ON os.ID_MECANICO = m.ID_MECANICO
+WHERE os.STATUS_OS = 'EM_ABERTO'
+ORDER BY os.DATA_ABERTURA DESC;
+
+-- Consulta 2 (RF05): historico completo de uma placa, inclusive OS sem mecanico (LEFT JOIN)
+SELECT os.ID_OS, os.TIPO_OS, os.STATUS_OS, os.DATA_ABERTURA, os.DATA_CONCLUSAO,
+       COALESCE(m.NOME, '(nao atribuido)') AS MECANICO
+FROM TB_ORDEM_SERVICO os
+INNER JOIN TB_VEICULO v ON os.ID_VEICULO = v.ID_VEICULO
+LEFT  JOIN TB_MECANICO m ON os.ID_MECANICO = m.ID_MECANICO
+WHERE v.PLACA = 'BRA2E19'
+ORDER BY os.DATA_ABERTURA;
+
+-- Consulta 3 (RF06): percentual da frota com acessibilidade 100% ativa
+SELECT COUNT(*) AS TOTAL,
+       SUM(CASE WHEN STATUS_ELEVADOR = 'OPERACIONAL' AND STATUS_RAMPA = 'OPERACIONAL'
+                THEN 1 ELSE 0 END) AS ATIVOS,
+       ROUND(100.0 * SUM(CASE WHEN STATUS_ELEVADOR = 'OPERACIONAL' AND STATUS_RAMPA = 'OPERACIONAL'
+                              THEN 1 ELSE 0 END) / COUNT(*), 1) AS PERCENTUAL_ATIVO
+FROM TB_VEICULO;
+
+-- Fechamento de OS (transacao: OS concluida e veiculo liberado juntos)
+START TRANSACTION;
+UPDATE TB_ORDEM_SERVICO SET STATUS_OS = 'CONCLUIDA', DATA_CONCLUSAO = NOW() WHERE ID_OS = 1;
+UPDATE TB_VEICULO SET STATUS_ELEVADOR = 'OPERACIONAL' WHERE ID_VEICULO = 1;
+COMMIT;</code></pre></div>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-nosql" aria-labelledby="tab-nosql" hidden>
+            <div class="nosql-grid">
+              <div class="code-block"><button class="copy-btn" type="button">Copiar</button><pre><code class="lang-json">{
+  "_id": {
+    "$oid": "673b5a1f8c9b1a2b3c4d5e6f"
+  },
+  "bus_id": "BUS-9042",
+  "timestamp": {
+    "$date": "2026-11-18T14:30:00Z"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -46.633308,
+      -23.55052
+    ]
+  },
+  "accessibility_sensors": {
+    "hydraulic_ramp_status": "OK",
+    "tactile_floor_sensor": "OK",
+    "wheelchair_bay_occupied": false
+  },
+  "passenger_load_pct": 62,
+  "battery_voltage": 24.8,
+  "firmware_version": "v2.1.4"
+}</code></pre></div>
+              <div class="card nosql-notes">
+                <h4>Coleção <code>telemetry_logs</code></h4>
+                <ul>
+                  <li><b>GeoJSON</b>: coordenadas na ordem [longitude, latitude], exigida pelo índice <code>2dsphere</code>.</li>
+                  <li><b>Índice composto</b> <code>{ bus_id: 1, timestamp: -1 }</code> para buscar a última leitura de cada ônibus.</li>
+                  <li><b>TTL de 90 dias</b> no campo <code>timestamp</code>: os dados brutos expiram sozinhos, como pede a LGPD.</li>
+                  <li>Esquema flexível: firmware novo pode enviar sensores extras sem migração.</li>
+                </ul>
+                <div class="code-block small"><pre><code class="lang-js">db.telemetry_logs.createIndex({ location: "2dsphere" })
+db.telemetry_logs.createIndex({ bus_id: 1, timestamp: -1 })
+db.telemetry_logs.createIndex({ timestamp: 1 },
+  { expireAfterSeconds: 7776000 })</code></pre></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 5. TERMINAL C ============ -->
+    <section class="section" id="terminal" aria-labelledby="term-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 5 · PIM IV</span>
+          <h2 id="term-title">Terminal interativo do programa em C</h2>
+          <p>Simulação fiel do executável <code>urbano</code>: mesmos menus, mesmas validações. Faça login com um dos perfis abaixo e veja os arquivos em disco mudarem ao lado.</p>
+        </header>
+        <div class="cred-panel" aria-labelledby="cred-title">
+          <div class="cred-head">
+            <h3 id="cred-title">Credenciais de acesso (RF07)</h3>
+            <p>Criadas automaticamente no primeiro acesso. Clique em um perfil para entrar com ele.</p>
+          </div>
+          <div class="cred-grid">
+            <div class="cred">
+              <span class="tag green">Gestor de Frota</span>
+              <dl><dt>Usuário</dt><dd>gestor</dd><dt>Senha</dt><dd>gestor123</dd></dl>
+              <p>Acesso total: cadastro, ordens, preventivas, telemetria e relatórios.</p>
+              <button type="button" class="cred-btn" data-user="gestor" data-pass="gestor123">Entrar como Gestor</button>
+            </div>
+            <div class="cred">
+              <span class="tag purple">Mecânico de Garagem</span>
+              <dl><dt>Usuário</dt><dd>mecanico</dd><dt>Senha</dt><dd>mec123</dd></dl>
+              <p>Diagnóstico, abertura e conclusão de ordens de serviço e consultas.</p>
+              <button type="button" class="cred-btn" data-user="mecanico" data-pass="mec123">Entrar como Mecânico</button>
+            </div>
+            <div class="cred">
+              <span class="tag blue">Fiscal Municipal</span>
+              <dl><dt>Usuário</dt><dd>fiscal</dd><dt>Senha</dt><dd>fiscal123</dd></dl>
+              <p>Somente consultas e relatórios; operações de alteração são bloqueadas.</p>
+              <button type="button" class="cred-btn" data-user="fiscal" data-pass="fiscal123">Entrar como Fiscal</button>
+            </div>
+          </div>
+        </div>
+        <div class="term-layout">
+          <div class="term-window">
+            <div class="term-bar">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="term-title">~/urbanoacessivel$ ./urbano</span>
+              <div class="term-actions">
+                <button type="button" id="term-demo" class="term-btn">▶ Demo automática</button>
+                <button type="button" id="term-restart" class="term-btn">↻ Reiniciar programa</button>
+              </div>
+            </div>
+            <div class="term-screen" id="term-screen" role="log" aria-live="polite" aria-label="Saída do programa"></div>
+            <form class="term-input" id="term-form" autocomplete="off">
+              <label for="term-in" class="prompt" id="term-prompt">&gt;</label>
+              <input id="term-in" type="text" spellcheck="false" autocapitalize="off" aria-describedby="term-hint">
+              <button type="submit" class="term-send" aria-label="Enviar">⏎</button>
+            </form>
+            <p class="term-hint" id="term-hint">Digite e pressione Enter. Use as credenciais do painel acima do terminal.</p>
+          </div>
+          <aside class="disk-panel" aria-label="Arquivos em disco">
+            <h3>Arquivos em disco</h3>
+            <div class="file"><div class="file-name">frota_urbanoacessivel.txt</div><pre id="file-frota"></pre></div>
+            <div class="file"><div class="file-name">ordens_servico.txt</div><pre id="file-ordens"></pre></div>
+            <div class="file"><div class="file-name">telemetria_log.txt</div><pre id="file-tele"></pre></div>
+            <details class="code-peek">
+              <summary>Ver a função de gravação em C</summary>
+              <div class="code-block small"><pre><code class="lang-c">/* Grava em arquivo temporario e substitui o original: evita perda em caso de falha. */
+int salvarFrota(const Frota *f) {
+    const char *tmp = ARQ_FROTA ".tmp";
+    FILE *arq = fopen(tmp, "w");
+    int i;
+    if (arq == NULL) {
+        printf("  [ERRO] Nao foi possivel gravar o arquivo de frota.\n");
+        return 0;
+    }
+    for (i = 0; i &lt; f-&gt;quantidade; i++) {
+        const Veiculo *v = &amp;f-&gt;itens[i];
+        fprintf(arq, "%d;%s;%s;%s;%d;%s;%s\n", v-&gt;id, v-&gt;placa, v-&gt;prefixo,
+                v-&gt;modelo, v-&gt;ano, v-&gt;status_elevador, v-&gt;status_rampa);
+    }
+    if (fclose(arq) != 0) return 0;
+    remove(ARQ_FROTA);
+    if (rename(tmp, ARQ_FROTA) != 0) {
+        printf("  [ERRO] Falha ao substituir o arquivo de frota.\n");
+        return 0;
+    }
+    return 1;
+}</code></pre></div>
+            </details>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. ACESSIBILIDADE ============ -->
+    <section class="section alt" id="acessibilidade" aria-labelledby="a11y-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Seção 6 · PIM III</span>
+          <h2 id="a11y-title">Direitos humanos, acessibilidade e LGPD</h2>
+          <p>Tecnologia que existe para garantir o direito de ir e vir (art. 5º, XV, da Constituição) de quem mais depende do transporte público.</p>
+        </header>
+        <div class="rights-grid">
+          <article class="card right-card">
+            <span class="tag blue">WCAG 2.1 · Nível AA</span>
+            <h3>Acessibilidade digital</h3>
+            <ul class="checklist">
+              <li><b>Perceptível</b> — contraste mínimo de 4,5:1, textos alternativos em todos os ícones.</li>
+              <li><b>Operável</b> — navegação completa por teclado, sem armadilhas de foco, animações pausáveis.</li>
+              <li><b>Compreensível</b> — linguagem simples, mensagens de erro que dizem como corrigir.</li>
+              <li><b>Robusto</b> — HTML semântico e ARIA testados com TalkBack e VoiceOver.</li>
+              <li>Vídeos com janela de Libras e navegação por voz no aplicativo do cidadão.</li>
+            </ul>
+          </article>
+          <article class="card right-card">
+            <span class="tag purple">Lei nº 13.709/2018</span>
+            <h3>LGPD aplicada à frota</h3>
+            <ul class="checklist">
+              <li><b>Minimização</b> — o app do cidadão recebe a posição do ônibus, nunca a do passageiro.</li>
+              <li><b>Anonimização</b> — logs de sensores sem vínculo com o operador ou motorista.</li>
+              <li><b>Retenção</b> — telemetria bruta expira em 90 dias (TTL no MongoDB).</li>
+              <li><b>Transparência</b> — política de privacidade em linguagem simples e em Libras.</li>
+              <li><b>Segurança</b> — TLS 1.3 em trânsito e controle de acesso por perfil (RF07).</li>
+            </ul>
+          </article>
+          <article class="card right-card">
+            <span class="tag green">Lei nº 13.146/2015</span>
+            <h3>Estatuto da Pessoa com Deficiência</h3>
+            <ul class="checklist">
+              <li>Garante transporte acessível em igualdade de oportunidades com as demais pessoas.</li>
+              <li>O RF06 dá ao poder público um indicador objetivo: percentual da frota com acessibilidade 100% ativa.</li>
+              <li>A OS automática (RF03) reduz o tempo de um elevador quebrado em circulação.</li>
+              <li>Público atendido: PCDs, idosos, gestantes e pessoas com mobilidade reduzida.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="impact card">
+          <div class="impact-text">
+            <h3>Como o dado vira direito</h3>
+            <p>Sensor detecta falha → pacote MQTT → OS aberta → mecânico repara → app avisa o passageiro qual próximo ônibus tem elevador funcionando.</p>
+          </div>
+          <ol class="flow" aria-label="Fluxo do dado ao direito">
+            <li>Sensor</li><li>Nuvem</li><li>OS</li><li>Reparo</li><li>Cidadão</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><b>UrbanoAcessível Soluções em Mobilidade e Tecnologia S.A.</b> — empresa fictícia criada para os Projetos Integrados Multidisciplinares III e IV do curso de Análise e Desenvolvimento de Sistemas da UNIP.</p>
+      <p class="muted">Projeto acadêmico · 2026 · <a href="#topo">Voltar ao topo ↑</a></p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
